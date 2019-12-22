@@ -1,0 +1,7 @@
+permalink: pretty
+sass:
+    style: expanded
+collections:
+  case-studies:
+    output: true
+    permalink: /:collection/:path/

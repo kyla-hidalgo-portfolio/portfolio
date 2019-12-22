@@ -1,0 +1,14 @@
+html {
+  font-family: $font-primary;
+  background: linear-gradient(37deg, #c79118, #781136);
+  // background: linear-gradient(37deg, #701778, #4a1778);
+  color: #fff;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-secondary;
+}
+
+h1 {
+  font-weight: 400;
+}

@@ -1,0 +1,398 @@
+backend:
+  name: github
+  repo: robillard-andrew-portfolio/portfolio
+
+media_folder: "images/uploads"
+display_url: andrewrobillard.com
+
+collections:
+  - label: "General Content"
+    name: "general-content"
+    files:
+      - label: "Site Information"
+        name: "site-information"
+        file: _data/site.yml
+        hint: "Contains basic information including website title, owner, meta description, contact information, and social media links."
+        fields:
+          - label: "Website Title"
+            name: "title"
+            widget: "string"
+            hint: Used in meta descriptions, header and footer logos, and other important locations.
+          - label: "Meta Description"
+            name: "meta"
+            widget: "string"
+            # hint: "This description is used for Search Engine Optimization (SEO)."
+          - label: "Site Owner"
+            name: "owner"
+            widget: "string"
+          - label: "Job Title"
+            name: "jobTitle"
+            widget: "string"
+          - label: "Website URL"
+            name: "url"
+            widget: "string"
+          - label: "Email"
+            name: "email"
+            widget: "string"
+          - label: "Telephone"
+            name: "tel"
+            widget: "string"
+          - label: "Postal Code"
+            name: "postalCode"
+            widget: "string"
+          - label: "Social Links"
+            name: "social"
+            widget: "list"
+            fields:
+              - label: Type
+                name: type
+                widget: "select"
+                options:
+                  - { label: "Github", value: "github" }
+                  - { label: "Instagram", value: "instagram" }
+                  - { label: "LinkedIn", value: "linkedin" }
+                  - { label: "Vimeo", value: "vimeo" }
+              - label: Link
+                name: url
+                widget: string
+      - label: "Home Page Content"
+        name: "home-content"
+        file: _data/home.yml
+        fields:
+          - label: Banner
+            name: banner
+            widget: object
+            fields:
+              - label: Headline
+                name: title
+                widget: string
+              - label: Background Image
+                name: img
+                widget: image
+              - label: Vimeo Link
+                name: video
+                widget: string
+          - label: About
+            name: about
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Image
+                name: img
+                widget: image
+              - label: Content
+                name: content
+                widget: markdown
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Content
+                name: content
+                widget: markdown
+              - label: Contact Form
+                name: form
+                widget: object
+                fields:
+                  - label: Form Fields
+                    name: fields
+                    widget: list
+                    types:
+                      - label: Short Text
+                        name: text
+                        widget: object
+                        fields:
+                          - label: Label
+                            name: label
+                            widget: string
+                          - label: Placeholder
+                            name: placeholder
+                            widget: string
+                            required: false
+                          - label: Responsive Width
+                            name: width
+                            widget: select
+                            hint: Width of form field at medium and large screen sizes (will always be full width at small screen sizes).
+                            options:
+                              - label: Full
+                                value: 1
+                              - label: Half
+                                value: 1-2
+                              - label: Third
+                                value: 1-3
+                              - label: Quarter
+                                value: 1-4
+                      - label: Long Text
+                        name: textarea
+                        widget: object
+                        fields:
+                          - label: Label
+                            name: label
+                            widget: string
+                          - label: Placeholder
+                            name: placeholder
+                            widget: string
+                            required: false
+                          - label: Responsive Width
+                            name: width
+                            widget: select
+                            hint: Width of form field at medium and large screen sizes (will always be full width at small screen sizes).
+                            options:
+                              - label: Full
+                                value: 1
+                              - label: Half
+                                value: 1-2
+                              - label: Third
+                                value: 1-3
+                              - label: Quarter
+                                value: 1-4
+                      - label: Email
+                        name: email
+                        widget: object
+                        fields:
+                          - label: Label
+                            name: label
+                            widget: string
+                          - label: Placeholder
+                            name: placeholder
+                            widget: string
+                            required: false
+                          - label: Responsive Width
+                            name: width
+                            widget: select
+                            hint: Width of form field at medium and large screen sizes (will always be full width at small screen sizes).
+                            options:
+                              - label: Full
+                                value: 1
+                              - label: Half
+                                value: 1-2
+                              - label: Third
+                                value: 1-3
+                              - label: Quarter
+                                value: 1-4
+                      - label: Telephone
+                        name: tel
+                        widget: object
+                        fields:
+                          - label: Label
+                            name: label
+                            widget: string
+                          - label: Placeholder
+                            name: placeholder
+                            widget: string
+                            required: false
+                          - label: Responsive Width
+                            name: width
+                            widget: select
+                            hint: Width of form field at medium and large screen sizes (will always be full width at small screen sizes).
+                            options:
+                              - label: Full
+                                value: 1
+                              - label: Half
+                                value: 1-2
+                              - label: Third
+                                value: 1-3
+                              - label: Quarter
+                                value: 1-4
+                      - label: Radio Buttons
+                        name: radio
+                        widget: object
+                        fields:
+                          - label: Group Nmae
+                            name: name
+                            widget: string
+                          - label: Options
+                            name: options
+                            widget: list
+                            fields:
+                              - label: Label
+                                name: label
+                                widget: string
+                          - label: Responsive Width
+                            name: width
+                            widget: select
+                            hint: Width of form field at medium and large screen sizes (will always be full width at small screen sizes).
+                            options:
+                              - label: Full
+                                value: 1
+                              - label: Half
+                                value: 1-2
+                              - label: Third
+                                value: 1-3
+                              - label: Quarter
+                                value: 1-4
+                      - label: Checkboxes
+                        name: checkbox
+                        widget: object
+                        fields:
+                          - label: Group Nmae
+                            name: name
+                            widget: string
+                          - label: Options
+                            name: options
+                            widget: list
+                            fields:
+                              - label: Label
+                                name: label
+                                widget: string
+                          - label: Responsive Width
+                            name: width
+                            widget: select
+                            hint: Width of form field at medium and large screen sizes (will always be full width at small screen sizes).
+                            options:
+                              - label: Full
+                                value: 1
+                              - label: Half
+                                value: 1-2
+                              - label: Third
+                                value: 1-3
+                              - label: Quarter
+                                value: 1-4
+                  - label: Submit Button Label
+                    name: submit
+                    widget: string
+  - label: Case Studies
+    name: "behind-the-scenes"
+    folder: "_behind-the-scenes"
+    create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Layout
+        name: layout
+        default: bts
+        widget: hidden
+      - label: Banner Image
+        name: bannerImg
+        widget: image
+      - label: Sections
+        name: sections
+        widget: list
+        types:
+          - label: Image Banner
+            name: img-banner
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Image
+                name: img
+                widget: image
+          - label: Image Text Split (Top Aligned)
+            name: image-text-split-top
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Content Flip
+                name: flipped
+                widget: boolean
+              - label: Image
+                name: img
+                widget: image
+              - label: Content
+                name: content
+                widget: markdown
+          - label: Image Text Split (Center Aligned)
+            name: image-text-split-middle
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Content Flip
+                name: flipped
+                widget: boolean
+              - label: Image
+                name: img
+                widget: image
+              - label: Content
+                name: content
+                widget: markdown
+          - label: Video Embed
+            name: video-embed
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Video Link
+                name: video
+                widget: string
+          - label: Video Grid
+            name: video-grid
+            widget: object
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Videos
+                name: videos
+                widget: list
+                fields:
+                  - label: Video Title
+                    name: title
+                    widget: string
+                  - label: Video Link
+                    name: link
+                    widget: string
+                  - label: Responsive Medium Width
+                    name: mWidth
+                    widget: select
+                    hint: Width of form field at medium screen sizes (will always be full width at small screen sizes).
+                    options:
+                      - label: Full
+                        value: 1
+                      - label: Half
+                        value: 1-2
+                      - label: Third
+                        value: 1-3
+                      - label: Quarter
+                        value: 1-4
+                  - label: Responsive Large Width
+                    name: lWidth
+                    widget: select
+                    hint: Width of form field at large screen sizes (will always be full width at small screen sizes).
+                    options:
+                      - label: Full
+                        value: 1
+                      - label: Half
+                        value: 1-2
+                      - label: Third
+                        value: 1-3
+                      - label: Quarter
+                        value: 1-4
+  - label: Work
+    name: "work"
+    folder: "_work"
+    create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Description
+        name: meta
+        widget: string
+        required: false
+      - label: Vimeo Link
+        name: vimeo
+        widget: string
+        hint: "Take only the 'src' link from the embed code and enter it here. Ex: 'https://player.vimeo.com/video/224391957'"
+      - label: Video Thumbnail
+        name: thumbnail
+        widget: image
+        hint: '16:9 thumbnail. Should be minimum ####px wide.'
+        required: false
+      - label: Active
+        name: active
+        widget: boolean
+        default: true
+        hint: When active, this work will be included in the 'Work' section of the Home page.
