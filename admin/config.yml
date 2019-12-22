@@ -1,9 +1,9 @@
 backend:
   name: github
-  repo: robillard-andrew-portfolio/portfolio
+  repo: kyla-hidalgo-portfolio/portfolio
 
 media_folder: "images/uploads"
-display_url: andrewrobillard.com
+display_url: kylahidalgo.com
 
 collections:
   - label: "General Content"
